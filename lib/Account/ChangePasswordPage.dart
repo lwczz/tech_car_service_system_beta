@@ -24,13 +24,13 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ChangePasswordPage(title: 'Flutter Demo Home Page'),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class ChangePasswordPage extends StatefulWidget {
+  ChangePasswordPage({Key key, this.title}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -44,10 +44,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _ChangePasswordPageState createState() => _ChangePasswordPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ChangePasswordPageState extends State<ChangePasswordPage> {
 
 
   @override
@@ -98,19 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
               children: <Widget>[
 
-                forgotPasswordTitle(),
 
-                Padding(
-                  padding: EdgeInsets.all(10.0),
-                ),
-
-                emailField(),
-
-                Padding(
-                  padding: EdgeInsets.all(210.0),
-                ),
-
-                submitButton()
 
               ],
             ),
@@ -123,86 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   }
 
-  Widget forgotPasswordTitle(){
 
-    return RichText(
-      text: TextSpan(
-        style: DefaultTextStyle.of(context).style,
-        children: <TextSpan>[
 
-          TextSpan(
-            text: "Please enter your email address.\n",
-            style: TextStyle(color: Colors.blue,fontSize: 18),
-          ),
 
-          TextSpan(
-            text: "A 4 digit verification code will be sent to this email address.",
-            style: TextStyle(color: Colors.black,fontSize: 14),
-          ),
 
-        ],
-      ),
-    );
 
-  }
-
-  Widget emailField(){
-    return TextFormField(
-
-      keyboardType: TextInputType.emailAddress,
-      decoration: InputDecoration(
-
-          border: InputBorder.none,
-
-          enabledBorder: OutlineInputBorder(
-
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            borderSide: BorderSide(color: Colors.black),
-
-          ),
-
-          focusedBorder: OutlineInputBorder(
-
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            borderSide: BorderSide(color: Colors.black),
-
-          ),
-
-          labelText: 'Email Address',
-          //LabelText
-
-          hintText: 'you@example.com',
-          //HintText
-
-          prefixIcon: Icon(Icons.email)
-        //Icon
-
-      ),
-
-    );
-  }
-
-  Widget submitButton() {
-
-    return ButtonTheme(
-
-      minWidth: 500.0,
-      height: 50.0,
-
-      child: RaisedButton(
-
-        textColor: Colors.white,
-        color:Colors.orange,
-        splashColor: Colors.orangeAccent,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)
-        ),
-        child: Text('Submit'),
-        onPressed: () {
-
-        },
-
-      ),
-    );
-
-  }
 }
